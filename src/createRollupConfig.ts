@@ -10,6 +10,7 @@ import replace from '@rollup/plugin-replace';
 import resolve from '@rollup/plugin-node-resolve';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import typescript from 'rollup-plugin-typescript2';
+import visualizer from 'rollup-plugin-visualizer';
 import { extractErrors } from './errors/extractErrors';
 import { babelPluginTsdx } from './babelPluginTsdx';
 import { TsdxOptions } from './types';
@@ -197,6 +198,11 @@ export async function createRollupConfig(
           ecma: 5,
           toplevel: opts.format === 'cjs',
           warnings: true,
+        }),
+      opts.inspect &&
+        visualizer({
+          sourcemap: true,
+          json: true,
         }),
     ],
   };

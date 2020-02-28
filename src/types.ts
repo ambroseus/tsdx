@@ -47,6 +47,8 @@ export interface TsdxOptions extends SharedOpts {
   writeMeta?: boolean;
   // Only transpile, do not type check (makes compilation faster)
   transpileOnly?: boolean;
+  // Analyze and visualize rollup bundle
+  inspect?: boolean;
 }
 
 export interface PackageJson {

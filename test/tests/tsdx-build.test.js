@@ -102,6 +102,14 @@ describe('tsdx build', () => {
     expect(code).toBe(0);
   });
 
+  it('should generate stats.json with --inspect option', () => {
+    util.setupStageWithFixture(stageName, 'build-default');
+    const output = shell.exec('node ../dist/index.js build --inspect');
+
+    expect(shell.test('-f', 'stats.json')).toBeTruthy();
+    expect(output.code).toBe(0);
+  });
+
   afterEach(() => {
     util.teardownStage(stageName);
   });

@@ -386,6 +386,8 @@ prog
   .example('build --tsconfig ./tsconfig.foo.json')
   .option('--transpileOnly', 'Skip type checking')
   .example('build --transpileOnly')
+  .option('--inspect', 'Analyze and visualize rollup bundle')
+  .example('build --transpileOnly')
   .option(
     '--extractErrors',
     'Extract errors to ./errors/codes.json and provide a url for decoding.'
